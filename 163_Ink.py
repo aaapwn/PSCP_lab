@@ -2,10 +2,15 @@
 import math
 def main():
     """waranthorn"""
-    ink = input().split()
-    for _ in range(int(ink[1])):
-        pos = input().split()
-        dis = math.sqrt(float(pos[0])**2 + float(pos[1])**2)
-        time = math.ceil(dis/float(ink[0]))
-        print(time)
+    grow, count = [int(x) for x in input().split()]
+
+    areas = []
+    for _ in range(count):
+        posx, posy = [int(x) for x in input().split()]
+        result = (posx ** 2 + posy ** 2) ** 0.5
+        result = 3.1416 * result ** 2
+        areas.append(result)
+
+    for area in areas:
+        print(math.ceil(area/grow))
 main()
